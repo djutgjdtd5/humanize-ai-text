@@ -4,50 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#1e293b">
+    <meta name="theme-color" content="#0f172a">
     
-    <title>Viral Apology Form Generator | Cricket & Sports Meme Maker</title>
-    <meta name="description" content="Create official apology forms for cricket players, teams, and celebrities. The best viral meme generator for Twitter and Instagram. Free & Fast.">
-    <meta name="keywords" content="apology form generator, cricket meme maker, babar azam apology form, virat kohli apology form, sports meme generator, viral twitter memes, ipl meme maker">
-    <meta name="author" content="MemePro Tools">
+    <title>Viral Apology Form | Add Custom Text & Photos</title>
+    <meta name="description" content="Create viral apology forms. Add custom text, upload photos, and drag elements anywhere. The best meme maker for Cricket & Gaming.">
+    <meta name="keywords" content="apology form maker, drag and drop meme generator, cricket meme maker, add photo to form, viral apology form">
+    <meta name="author" content="MemeGen Pro">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        /* --- PREMIUM DARK/MODERN THEME --- */
+        /* --- PREMIUM THEME --- */
         :root {
-            --bg-body: #0f172a;       /* Dark Navy Background */
-            --bg-card: #1e293b;       /* Lighter Card */
-            --primary: #3b82f6;       /* Bright Blue */
-            --text-main: #f8fafc;     /* White text */
-            --text-muted: #94a3b8;    /* Grey text */
+            --bg: #0f172a;
+            --card: #1e293b;
+            --primary: #3b82f6;
+            --text: #f8fafc;
             --border: #334155;
-            --paper: #ffffff;         /* Paper Color */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-body);
-            color: var(--text-main);
+            background-color: var(--bg);
+            color: var(--text);
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: flex; flex-direction: column; align-items: center;
         }
 
-        /* Navbar */
+        /* Nav */
         nav {
             width: 100%; padding: 1.5rem;
+            background: rgba(15, 23, 42, 0.95);
             border-bottom: 1px solid var(--border);
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
-            text-align: center;
-            position: sticky; top: 0; z-index: 50;
+            text-align: center; position: sticky; top: 0; z-index: 50;
         }
-        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+        .logo { font-size: 1.5rem; font-weight: 800; }
         .logo span { color: var(--primary); }
 
         /* AD SPACES */
@@ -55,7 +49,7 @@
             width: 100%; display: flex; justify-content: center; margin: 20px 0;
             min-height: 90px;
         }
-        .ad-box { background: #1e293b; border: 1px dashed #334155; display: flex; align-items: center; justify-content: center; }
+        .ad-box { background: #1e293b; border: 1px dashed #334155; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 
         /* MAIN LAYOUT */
         .main-wrapper {
@@ -63,78 +57,70 @@
             width: 100%; max-width: 1200px; padding: 1rem;
         }
 
-        /* LEFT: EDITOR */
+        /* LEFT: TOOLS */
         .editor-panel {
-            flex: 1; min-width: 300px;
-            background: var(--bg-card);
-            padding: 2rem; border-radius: 16px;
+            flex: 1; min-width: 320px;
+            background: var(--card); padding: 2rem; border-radius: 16px;
             border: 1px solid var(--border);
-            box-shadow: 0 10px 30px -5px rgba(0,0,0,0.3);
         }
 
-        h2 { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        h2 { font-size: 1.1rem; color: var(--primary); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        .input-group { margin-bottom: 1.5rem; }
-        label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); }
+        .control-group { margin-bottom: 1.5rem; border-bottom: 1px solid #334155; padding-bottom: 1.5rem; }
         
+        label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #94a3b8; }
         input[type="text"], input[type="date"] {
-            width: 100%; padding: 0.8rem;
-            background: #0f172a; border: 1px solid var(--border);
-            color: white; border-radius: 8px; font-size: 1rem;
-            outline: none; transition: 0.2s;
+            width: 100%; padding: 0.8rem; background: #0f172a; border: 1px solid var(--border);
+            color: white; border-radius: 8px; margin-bottom: 10px;
         }
-        input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
 
-        .checkbox-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+        .checkbox-group { display: flex; flex-direction: column; gap: 8px; }
         .checkbox-item {
-            display: flex; align-items: center; gap: 10px;
-            background: #0f172a; padding: 10px; border-radius: 8px; border: 1px solid var(--border);
-            cursor: pointer; transition: 0.2s;
+            display: flex; align-items: center; gap: 10px; padding: 8px;
+            background: #0f172a; border-radius: 6px; cursor: pointer; border: 1px solid var(--border);
         }
-        .checkbox-item:hover { border-color: var(--text-muted); }
-        .checkbox-item input { accent-color: var(--primary); width: 18px; height: 18px; }
+        
+        /* CUSTOM TOOLS */
+        .custom-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .btn-tool {
+            padding: 10px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;
+            transition: 0.2s; color: white;
+        }
+        .btn-add-text { background: #10b981; }
+        .btn-add-img { background: #8b5cf6; }
+        .btn-tool:hover { opacity: 0.9; transform: scale(1.02); }
 
-        /* RIGHT: PREVIEW */
+        /* RIGHT: CANVAS */
         .preview-panel {
-            flex: 1; min-width: 300px;
-            display: flex; flex-direction: column; align-items: center;
+            flex: 1; min-width: 320px; display: flex; flex-direction: column; align-items: center;
         }
-
-        /* The Canvas (Paper Look) */
+        
         canvas {
             width: 100%; max-width: 500px; height: auto;
-            background: white;
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
-            border-radius: 4px;
-            margin-bottom: 1.5rem;
+            background: white; border-radius: 4px;
+            box-shadow: 0 20px 50px -10px rgba(0,0,0,0.5);
+            cursor: move; /* Indicates dragging */
+            touch-action: none; /* Prevents scrolling while dragging on mobile */
         }
+        
+        .tip { font-size: 0.8rem; color: #64748b; margin-top: 5px; margin-bottom: 1rem; }
 
-        /* BUTTONS */
         .btn-download {
-            width: 100%; max-width: 500px;
-            padding: 1.2rem;
+            width: 100%; max-width: 500px; padding: 1.2rem;
             background: linear-gradient(135deg, var(--primary), #2563eb);
             color: white; border: none; border-radius: 12px;
-            font-size: 1.1rem; font-weight: 800; text-transform: uppercase;
-            cursor: pointer; transition: 0.2s;
-            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
-            display: flex; align-items: center; justify-content: center; gap: 10px;
+            font-size: 1.1rem; font-weight: 800; cursor: pointer;
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
+            margin-top: 1rem;
         }
-        .btn-download:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.6); }
-        .btn-download:active { transform: scale(0.98); }
+        .btn-download:hover { transform: translateY(-2px); }
 
-        /* FOOTER */
-        .seo-text {
-            max-width: 800px; text-align: center; font-size: 0.8rem; color: var(--text-muted);
-            margin: 3rem auto; line-height: 1.6; padding: 0 1rem;
-        }
+        .hidden-input { display: none; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Meme<span>Gen</span></div>
-    </nav>
+    <nav><div class="logo">Meme<span>Pro</span></div></nav>
 
     <div class="ad-container">
         <div class="ad-box" style="width: 728px; height: 90px;">
@@ -154,57 +140,36 @@
     <div class="main-wrapper">
         
         <div class="editor-panel">
-            <h2>📝 Fill Details</h2>
-            
-            <div class="input-group">
-                <label>Apologizing To (Player/Team Name)</label>
-                <input type="text" id="targetName" placeholder="e.g. Babar Azam, Zimbabwe" maxlength="25">
+            <h2>1. Official Details</h2>
+            <div class="control-group">
+                <input type="text" id="targetName" placeholder="Apologizing To (e.g. Babar Azam)" maxlength="25">
+                <input type="text" id="signerName" placeholder="Signed By (Your Name)" maxlength="20">
+                <input type="date" id="datePicker">
             </div>
 
-            <div class="input-group">
-                <label>Reason for Apology (Select One)</label>
+            <h2>2. Select Reason</h2>
+            <div class="control-group">
                 <div class="checkbox-group">
-                    <label class="checkbox-item">
-                        <input type="radio" name="reason" value="I wasn't familiar with your game" checked>
-                        I wasn't familiar with your game
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="radio" name="reason" value="I listened to the haters & media">
-                        I listened to the haters & media
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="radio" name="reason" value="I thought you were finished">
-                        I thought you were finished
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="radio" name="reason" value="I was jealous of your aura">
-                        I was jealous of your aura
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="radio" name="reason" value="I wanted likes on Twitter">
-                        I wanted likes on Twitter
-                    </label>
+                    <label class="checkbox-item"><input type="radio" name="reason" value="I wasn't familiar with your game" checked> I wasn't familiar with your game</label>
+                    <label class="checkbox-item"><input type="radio" name="reason" value="I listened to the haters"> I listened to the haters</label>
+                    <label class="checkbox-item"><input type="radio" name="reason" value="I thought you were finished"> I thought you were finished</label>
                 </div>
             </div>
 
-            <div class="input-group">
-                <label>Signed By (Your Name)</label>
-                <input type="text" id="signerName" placeholder="e.g. A Cricket Fan" maxlength="20">
+            <h2>3. Creative Mode (Drag & Drop)</h2>
+            <div class="control-group custom-tools">
+                <button class="btn-tool btn-add-text" onclick="addCustomText()">+ Add Text</button>
+                <button class="btn-tool btn-add-img" onclick="document.getElementById('imgUpload').click()">+ Add Photo</button>
+                <input type="file" id="imgUpload" accept="image/*" class="hidden-input">
             </div>
-
-            <div class="input-group">
-                <label>Date</label>
-                <input type="date" id="datePicker">
-            </div>
+            <p style="font-size: 0.8rem; color: #94a3b8;">*Double click an item to remove it.</p>
         </div>
 
         <div class="preview-panel">
-            <h2>🖼️ Live Preview</h2>
-            <canvas id="memeCanvas" width="500" height="600"></canvas>
-            
-            <button class="btn-download" id="downloadBtn">
-                <span>⬇️ Download Image</span>
-            </button>
+            <canvas id="memeCanvas" width="500" height="650"></canvas>
+            <p class="tip">✨ Tip: You can drag Text & Photos anywhere on the paper!</p>
+
+            <button class="btn-download" id="downloadBtn">⬇️ Download Image</button>
         </div>
 
     </div>
@@ -224,39 +189,39 @@
         </div>
     </div>
 
-    <div class="seo-text">
-        <p>Use this <strong>Viral Apology Form Generator</strong> to create funny memes for Cricket, Football, and Gaming. The ultimate <strong>Babar Azam Apology Form</strong> and <strong>Sports Meme Maker</strong>. Perfect for Twitter, Reddit, and Instagram stories.</p>
-    </div>
-
     <script type='text/javascript' src='//pl28120871.effectivegatecpm.com/b8/2a/fe/b82afee8cc534f12fba12741bfb629a1.js'></script>
 
     <script>
-        // 💰 DIRECT LINK AD URL
+        // 💰 MONEY LINK
         const DIRECT_LINK = "https://www.effectivegatecpm.com/wtv8888v?key=d837f9dc7c48bf7b0d830d9f0d04a531";
 
-        // Canvas Setup
         const canvas = document.getElementById('memeCanvas');
         const ctx = canvas.getContext('2d');
         const targetInput = document.getElementById('targetName');
         const signerInput = document.getElementById('signerName');
         const dateInput = document.getElementById('datePicker');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const reasons = document.getElementsByName('reason');
-
-        // Set Today's Date Default
+        const imgUpload = document.getElementById('imgUpload');
+        
         dateInput.valueAsDate = new Date();
 
-        function drawForm() {
-            // 1. Draw Paper Background
+        // STATE FOR DRAGGABLE OBJECTS
+        let customElements = []; // Stores {type: 'text'|'img', x, y, content, w, h}
+        let isDragging = false;
+        let startX, startY;
+        let selectedElement = null;
+
+        // --- DRAWING ENGINE ---
+        function draw() {
+            // 1. Clear & Background
             ctx.fillStyle = "#ffffff";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // 2. Draw Borders (Official Look)
+            // 2. Official Form Borders
             ctx.strokeStyle = "#000000";
             ctx.lineWidth = 4;
-            ctx.strokeRect(20, 20, 460, 560);
+            ctx.strokeRect(20, 20, 460, 610);
             ctx.lineWidth = 1;
-            ctx.strokeRect(25, 25, 450, 550);
+            ctx.strokeRect(25, 25, 450, 600);
 
             // 3. Header
             ctx.fillStyle = "#000000";
@@ -265,70 +230,173 @@
             ctx.fillText("OFFICIAL APOLOGY FORM", 250, 80);
             
             ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.moveTo(50, 90);
-            ctx.lineTo(450, 90);
-            ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(50, 95); ctx.lineTo(450, 95); ctx.stroke();
 
-            // 4. To Section
+            // 4. Fixed Fields
             ctx.font = "bold 18px 'Courier Prime', monospace";
             ctx.textAlign = "left";
-            ctx.fillText("TO: " + (targetInput.value.toUpperCase() || "PLAYER NAME"), 50, 140);
+            ctx.fillText("TO: " + (targetInput.value.toUpperCase() || "_______"), 50, 140);
             
-            // 5. Body Text
             ctx.font = "16px 'Courier Prime', monospace";
-            ctx.fillText("I owe you an apology because:", 50, 190);
+            ctx.fillText("I owe you an apology because:", 50, 180);
 
-            // 6. Draw Reasons (Checkboxes)
-            let yPos = 230;
+            // 5. Reasons
+            const reasons = document.getElementsByName('reason');
+            let yPos = 220;
             reasons.forEach(r => {
-                // Draw Box
+                ctx.lineWidth = 1;
                 ctx.strokeRect(50, yPos - 15, 20, 20);
-                
-                // Draw Checkmark if selected
                 if(r.checked) {
                     ctx.font = "bold 20px Arial";
                     ctx.fillText("✓", 53, yPos + 3);
                 }
-
-                // Draw Text
                 ctx.font = "14px 'Courier Prime', monospace";
                 ctx.fillText(r.value, 85, yPos);
                 yPos += 40;
             });
 
-            // 7. Signature Section (Bottom)
-            ctx.beginPath();
-            ctx.moveTo(50, 500);
-            ctx.lineTo(250, 500);
-            ctx.stroke();
-
+            // 6. Signature Area
+            ctx.lineWidth = 2;
+            ctx.beginPath(); ctx.moveTo(50, 560); ctx.lineTo(250, 560); ctx.stroke();
             ctx.font = "16px 'Courier Prime', monospace";
-            ctx.fillText("SIGNED: " + (signerInput.value || "Your Name"), 50, 525);
-            ctx.fillText("DATE: " + dateInput.value, 300, 525);
+            ctx.fillText("SIGNED: " + (signerInput.value || ""), 50, 585);
+            ctx.fillText("DATE: " + dateInput.value, 300, 585);
+
+            // 7. DRAW CUSTOM DRAGGABLE ELEMENTS
+            customElements.forEach(el => {
+                if (el.type === 'text') {
+                    ctx.font = "bold 20px 'Courier Prime', monospace";
+                    ctx.fillStyle = "red"; // Stamp look
+                    ctx.fillText(el.content, el.x, el.y);
+                } else if (el.type === 'img') {
+                    ctx.drawImage(el.content, el.x, el.y, el.w, el.h);
+                }
+            });
         }
 
-        // Live Update Listeners
-        targetInput.addEventListener('input', drawForm);
-        signerInput.addEventListener('input', drawForm);
-        dateInput.addEventListener('input', drawForm);
-        reasons.forEach(r => r.addEventListener('change', drawForm));
+        // --- INTERACTION LOGIC (DRAG & DROP) ---
+        function getMousePos(evt) {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            // Handle Touch or Mouse
+            const clientX = evt.touches ? evt.touches[0].clientX : evt.clientX;
+            const clientY = evt.touches ? evt.touches[0].clientY : evt.clientY;
+            return {
+                x: (clientX - rect.left) * scaleX,
+                y: (clientY - rect.top) * scaleY
+            };
+        }
+
+        function isHit(pos, el) {
+            if (el.type === 'text') {
+                // Approximate text hit box
+                return pos.x >= el.x - 10 && pos.x <= el.x + 100 && pos.y >= el.y - 20 && pos.y <= el.y + 10;
+            } else if (el.type === 'img') {
+                return pos.x >= el.x && pos.x <= el.x + el.w && pos.y >= el.y && pos.y <= el.y + el.h;
+            }
+            return false;
+        }
+
+        // Events: Mouse
+        canvas.addEventListener('mousedown', handleStart);
+        canvas.addEventListener('mousemove', handleMove);
+        canvas.addEventListener('mouseup', handleEnd);
+        canvas.addEventListener('mouseout', handleEnd);
+        
+        // Events: Touch (Mobile)
+        canvas.addEventListener('touchstart', handleStart, {passive: false});
+        canvas.addEventListener('touchmove', handleMove, {passive: false});
+        canvas.addEventListener('touchend', handleEnd);
+
+        // Double Click to Delete
+        canvas.addEventListener('dblclick', (e) => {
+            const pos = getMousePos(e);
+            // Remove element if clicked
+            customElements = customElements.filter(el => !isHit(pos, el));
+            draw();
+        });
+
+        function handleStart(e) {
+            if(e.type === 'touchstart') e.preventDefault(); // Stop scrolling
+            const pos = getMousePos(e);
+            // Check items in reverse (topmost first)
+            for (let i = customElements.length - 1; i >= 0; i--) {
+                if (isHit(pos, customElements[i])) {
+                    selectedElement = customElements[i];
+                    startX = pos.x;
+                    startY = pos.y;
+                    isDragging = true;
+                    return;
+                }
+            }
+        }
+
+        function handleMove(e) {
+            if (!isDragging || !selectedElement) return;
+            if(e.type === 'touchmove') e.preventDefault();
+            
+            const pos = getMousePos(e);
+            const dx = pos.x - startX;
+            const dy = pos.y - startY;
+
+            selectedElement.x += dx;
+            selectedElement.y += dy;
+
+            startX = pos.x;
+            startY = pos.y;
+            draw();
+        }
+
+        function handleEnd() {
+            isDragging = false;
+            selectedElement = null;
+        }
+
+        // --- ADDING ELEMENTS ---
+        window.addCustomText = () => {
+            const text = prompt("Enter text to add:");
+            if(text) {
+                customElements.push({ type: 'text', x: 250, y: 300, content: text });
+                draw();
+            }
+        };
+
+        imgUpload.addEventListener('change', (e) => {
+            if(e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.onload = function() {
+                        // Scale down if huge
+                        let w = 150; 
+                        let h = (img.height / img.width) * w;
+                        customElements.push({ type: 'img', x: 200, y: 300, content: img, w: w, h: h });
+                        draw();
+                    }
+                    img.src = event.target.result;
+                }
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+
+        // --- LISTENERS FOR INPUTS ---
+        targetInput.addEventListener('input', draw);
+        signerInput.addEventListener('input', draw);
+        dateInput.addEventListener('input', draw);
+        document.getElementsByName('reason').forEach(r => r.addEventListener('change', draw));
 
         // Initial Draw
-        // Load fonts first then draw
-        document.fonts.ready.then(drawForm);
+        document.fonts.ready.then(draw);
+        setTimeout(draw, 500); // Backup draw
 
-        // 💰 DOWNLOAD + AD LOGIC
-        downloadBtn.addEventListener('click', () => {
-            // 1. Open Ad (New Tab)
-            if(DIRECT_LINK) {
-                window.open(DIRECT_LINK, '_blank');
-            }
-
-            // 2. Download Image (Delay slightly for smooth UX)
+        // --- DOWNLOAD & ADS ---
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            if(DIRECT_LINK) window.open(DIRECT_LINK, '_blank');
+            
             setTimeout(() => {
                 const link = document.createElement('a');
-                link.download = `Apology_To_${targetInput.value || 'Someone'}.png`;
+                link.download = `Apology_${targetInput.value || 'Meme'}.png`;
                 link.href = canvas.toDataURL();
                 link.click();
             }, 500);
